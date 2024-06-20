@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend server.js",
+    "start": "node backend/server.js"
   },
   "author": "jubairredwanoishi",
   "license": "ISC",
@@ -13,9 +15,9 @@
     "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.1",
+    "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.2"
   },
-  "devDependencies": {},
   "description": ""
 }
