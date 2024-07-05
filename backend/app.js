@@ -4,14 +4,17 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload=require("express-fileupload");
+const cors = require("cors");
 
 
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
+app.use("/",express.static("uploads"));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(fileUpload({useTempFiles:true}));
-//file upload
+
+
 
 
 
@@ -21,9 +24,13 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     path: "config/.env",
   });
 }
+// import routes
+const user = require("./controller/user");
+
 
 
 // it's for ErrorHandling
 app.use(ErrorHandler);
 
-module.exports = app; 
+module.exports = app;
+app.use("/api/v2/user", user); 
