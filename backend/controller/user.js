@@ -1,42 +1,30 @@
 const express = require("express");
 const path = require("path");
+const User=require("path");
 const router = express.Router();
-const {upload} = require("../multer");
-
-
-/*const cloudinary = require("cloudinary");
-const ErrorHandler = require("../utils/ErrorHandler");
-const catchAsyncErrors = require("../middleware/catchAsyncErrors");
-const jwt = require("jsonwebtoken");
-const sendMail = require("../utils/sendMail");
-const sendToken = require("../utils/jwtToken");
-const { isAuthenticated, isAdmin } = require("../middleware/auth");*/
+const { upload } = require("../multer");
+const ErrorHandler = require("../utils/ErrorHandler"); // Corrected path
 
 // create user
-router.post("/create-user", async (req, res, next) => {
-  try {
-    const { name, email, password, avatar } = req.body;
+router.post("/create-user", upload.single("file"), async (req, res,next) => {
+
+    const { name, email, password } = req.body;
     const userEmail = await User.findOne({ email });
 
     if (userEmail) {
       return next(new ErrorHandler("User already exists", 400));
     }
 
-    /*const myCloud = await cloudinary.v2.uploader.upload(avatar, {
-      folder: "avatars",
-    });*/
-    const filename =req.file.filename;
-    const fileUrl = pat.join(filename);
+    const filename = req.file.filename;
+    const fileUrl = path.join(filename); // Adjust the path as per your requirements
 
-   
     const user = {
-      name: name,
-      email: email,
-      password: password,
+      name,
+      email,
+      password,
       avatar: fileUrl,
     };
 
-    console.log(user);
+   console.log(user);
   })
-
-  module.exports =routers;
+  module.exports=router;
