@@ -27,4 +27,4 @@ router.post("/create-user", upload.single("file"), async (req, res,next) => {
 
    console.log(user);
   })
-  module.exports=router;
+  module.exports=router
