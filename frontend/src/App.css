@@ -44,47 +44,45 @@ input[type=number]
   -moz-appearance: textfield;
 }
 
-.sidebar {
-  width: 200px;
-  background: #f4f4f4;
-  padding: 20px;
-  height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.sidebar h2 {
-  margin: 0 0 20px;
-  font-size: 1.5em;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.sidebar ul li {
-  margin: 10px 0;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2em;
+.card {
+  padding: 2em;
 }
 
-.sidebar ul li a:hover {
-  color: #007bff;
-}
-
-.logout-button {
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 1.2em;
-  cursor: pointer;
-  padding: 0;
-}
-
-.logout-button:hover {
-  color: #007bff;
+.read-the-docs {
+  color: #888;
 }

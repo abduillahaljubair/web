@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import {Login, SignupPage,HomePage} from "./Routes.js";
 import { useAuthStore} from './store/AuthStore.js'
+import Home from './component/Home/Home.jsx'
 import "./App.css"
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={token ? <Navigate to="/dashboard" /> : <Login />} />
         <Route path='/login' element={token ? <Navigate to="/dashboard" /> : <Login />} />
-        <Route path='/dashboard' element={token ? <HomePage />: <Login />} />
+        <Route path='/dashboard' element={token ? <Home />: <Login />} />
         <Route path='/sign-up' element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
