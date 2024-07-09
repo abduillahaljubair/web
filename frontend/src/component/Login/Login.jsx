@@ -1,11 +1,33 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import styles from "../../styles/styles";
-import {Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { server } from "../../server";
+import {useAuthStore } from '../../store/AuthStore'
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+  const { setToken } = useAuthStore();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const config = { headers: { "Content-Type": "application/json" } };
+    const data = { email, password };
+
+    try {
+      const res = await axios.post(`${server}/user/login`, data, config);
+      // localStorage.setItem('accessToken',res.data.token);
+      setToken(res.data.token)
+      console.log(res.data);
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -16,7 +38,7 @@ const Login = () => {
       </div>
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
