@@ -10,6 +10,7 @@ const sendToken = require("../utils/jwtToken");
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
 const { upload } = require("../utils/multer");
 const path = require("path");
+const bcrypt = require("bcryptjs");
 
 // Create user (signup)
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
@@ -21,29 +22,38 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       throw new ErrorHandler("User already exists", 403);
     }
 
-    const filename = req?.file?.filename ?? '';
-    const fileUrl = path.join("uploads", filename); // Adjust the path as per your requirements
-
+    //const filename = req?.file?.filename ?? '';
+    //const fileUrl = path.join("uploads", filename); // Adjust the path as per your requirements
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: "customer_avatars",
+    });
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = new User({
-      name,
-      email,
-      password: hashedPassword,
-      phoneNumber,
-      addresses,
-      avatar: {
-        public_id: req.file.filename,
-        url: fileUrl,
-      },
-    });
+    // const user = new User({
+    //   name,
+    //   email,
+    //   password: hashedPassword,
+    //   phoneNumber,
+    //   addresses,
+    //   avatar: {
+    //     public_id: myCloud.public_id,
+    //     url: myCloud.secure_url,
+    //   },
+    // });
 
-    await user.save();
+    // await user.save();
+    // console.log(user)
+    const activationToken = createActivationToken({name, email, password, avatar: {
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
+    },});
 
+   const activationUrl = `http://localhost:3000/activation/${activationToken}`;
+  console.log(activationUrl)
     res.status(200).json({
       success: true,
       message: "User created successfully",
-      user,
+     
     });
   } catch (error) {
     res.status(error.statusCode?? 500).json({
