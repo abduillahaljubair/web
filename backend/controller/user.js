@@ -82,14 +82,21 @@ router.post("/login-user", async (req, res, next) => {
 
     console.log('secret:',process.env.JWT_SECRET)
     console.log('JWT_EXPIRE:',process.env.JWT_EXPIRE)
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign(JSON.parse( JSON.stringify(user)), process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRE,
     });
 
-    res.status(200).json({
+    const options = {
+      expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    };
+  
+    res.status(200).cookie("token", token, options).json({
       success: true,
-      token,
       user,
+      token,
     });
   } catch (error) {
    
