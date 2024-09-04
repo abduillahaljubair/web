@@ -121,12 +121,13 @@ router.post(
       }
 
       const user = await Shop.findOne({ email }).select("+password");
-
+      
       if (!user) {
         return next(new ErrorHandler("User doesn't exists!", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
+      console.log('isPasswordValid',isPasswordValid)
 
       if (!isPasswordValid) {
         return next(

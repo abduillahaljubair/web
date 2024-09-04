@@ -11,7 +11,7 @@ exports.isAuthenticated = catchAsyncErrors(async(req,res,next) => {
         return next(new ErrorHandler("Please login to continue", 401));
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     req.user = await User.findById(decoded.id);
 
@@ -25,9 +25,9 @@ exports.isSeller = catchAsyncErrors(async(req,res,next) => {
         return next(new ErrorHandler("Please login to continue", 401));
     }
 
-    const decoded = jwt.verify(seller_token, process.env.JWT_SECRET_KEY);
-
-    req.seller = await Shop.findById(decoded.id);
+    const decoded = jwt.verify(seller_token, process.env.JWT_SECRET);
+    console.log('decoded',decoded) 
+    req.seller = await Shop.findById(decoded._id);
 
     next();
 });
