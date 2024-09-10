@@ -9,9 +9,9 @@ import styles from "../../styles/styles";
 import { TfiGallery } from "react-icons/tfi";
 import socketIO from "socket.io-client";
 import { format } from "timeago.js";
-const ENDPOINT = "https://socket-ecommerce-tu68.onrender.com/";
+const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
-
+console.log("socketId",socketId)
 const DashboardMessages = () => {
   const { seller,isLoading } = useSelector((state) => state.seller);
   const [conversations, setConversations] = useState([]);
@@ -28,6 +28,7 @@ const DashboardMessages = () => {
 
   useEffect(() => {
     socketId.on("getMessage", (data) => {
+      console.log("getMessage_2",data)
       setArrivalMessage({
         sender: data.senderId,
         text: data.text,

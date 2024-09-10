@@ -1,4 +1,8 @@
-const socketIO = require("socket.io");
+const socketIO = require('socket.io')(http, {
+  cors: {
+    origins: ['http://localhost:3000']
+  }
+});
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
