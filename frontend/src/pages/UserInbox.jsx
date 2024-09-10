@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Layout/Header";
 import { useSelector } from "react-redux";
-import socketIO from "socket.io-client";
+import {io} from "socket.io-client";
 import { format } from "timeago.js";
 import { server } from "../server";
 import axios from "axios";
@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
 import styles from "../styles/styles";
-const ENDPOINT = "https://socket-ecommerce-tu68.onrender.com/";
-const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
+const ENDPOINT = "http://localhost:4000/";
+const socketId = io(ENDPOINT, { transports: ["websocket"] });
 
 const UserInbox = () => {
   const { user,loading } = useSelector((state) => state.user);
@@ -27,7 +27,14 @@ const UserInbox = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    socketId.on('connect', () => {
+      console.log('socketId Connected to the server!');
+    });
+    socketId.on('connect_error', (error) => {
+      console.log('Error connecting to the server:', error);
+    });
     socketId.on("getMessage", (data) => {
+      console.log("getMessage_1",data)
       setArrivalMessage({
         sender: data.senderId,
         text: data.text,
