@@ -27,7 +27,7 @@ export const navItems = [
     {
       id: 1,
       title: "Free Shipping",
-      Description: "From all orders over 100$",
+      Description: "From all orders over 100৳",
       icon: (
         <svg
           width="36"
@@ -191,28 +191,28 @@ export const navItems = [
   export const categoriesData = [
     {
       id: 1,
-      title: "Fruits & Vegetables",
+      title: "Fruits and Vegetables",
       subTitle: "",
       image_Url:
         "https://chaldn.com/_mpimage/fruits-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23769&q=low&v=1&m=400&webp=1",
     },
     {
       id: 2,
-      title: "Meat & Fish",
+      title: "Meat and Fish",
       subTitle: "",
       image_Url:
         "https://chaldn.com/_mpimage/meat-fish?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23737&q=low&v=1&m=400&webp=1",
     },
     {
       id: 3,
-      title: "Beverages & Drinks",
+      title: "Beverages and Drinks",
       subTitle: "",
       image_Url:
         "https://chaldn.com/_mpimage/beverages?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23727&q=low&v=1&m=400&webp=1",
     },
     {
       id: 4,
-      title: "Candy & Chocolates",
+      title: "Candy and Chocolates",
       subTitle: "",
       image_Url:
         "https://chaldn.com/_mpimage/candy-chocolate?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D119184&q=low&v=1&m=400&webp=1",
@@ -616,10 +616,10 @@ export const navItems = [
       name: "Cooking & Kitchen",
     },
     {
-      name: "Meat & Fish",
+      name: "Meat and Fish",
     },
     {
-      name: "Fruits & Vegetable",
+      name: "Fruits and Vegetable",
     },
     {
       name: "Cooking Video",
