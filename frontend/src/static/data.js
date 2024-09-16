@@ -191,72 +191,72 @@ export const navItems = [
   export const categoriesData = [
     {
       id: 1,
-      title: "Computers and Laptops",
+      title: "Fruits & Vegetables",
       subTitle: "",
       image_Url:
-        "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
+        "https://chaldn.com/_mpimage/fruits-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23769&q=low&v=1&m=400&webp=1",
     },
     {
       id: 2,
-      title: "cosmetics and body care",
+      title: "Meat & Fish",
       subTitle: "",
       image_Url:
-        "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
+        "https://chaldn.com/_mpimage/meat-fish?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23737&q=low&v=1&m=400&webp=1",
     },
     {
       id: 3,
-      title: "Accesories",
+      title: "Beverages & Drinks",
       subTitle: "",
       image_Url:
-        "https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories_335657-2345.jpg?w=2000",
+        "https://chaldn.com/_mpimage/beverages?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23727&q=low&v=1&m=400&webp=1",
     },
     {
       id: 4,
-      title: "Cloths",
+      title: "Candy & Chocolates",
       subTitle: "",
       image_Url:
-        "https://www.shift4shop.com/2015/images/industries/clothing/clothing-apparel.png",
+        "https://chaldn.com/_mpimage/candy-chocolate?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D119184&q=low&v=1&m=400&webp=1",
     },
     {
       id: 5,
-      title: "Shoes",
+      title: "Baking",
       subTitle: "",
       image_Url:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
+        "https://chaldn.com/_mpimage/baking?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23770&q=low&v=1&m=400&webp=1",
     },
     {
       id: 6,
-      title: "Gifts",
+      title: "Medicine",
       subTitle: "",
       image_Url:
-        "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+        "https://chaldn.com/_mpimage/all-meds?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D106031&q=low&v=1&m=400&webp=1",
     },
     {
       id: 7,
-      title: "Pet Care",
+      title: "Diary & Eggs",
       subTitle: "",
-      image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+      image_Url: "https://chaldn.com/_mpimage/dairy-eggs?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D31484&q=best&v=1&m=400&webp=1",
     },
     {
       id: 8,
-      title: "Mobile and Tablets",
+      title: "Kitchen Appliances",
       subTitle: "",
       image_Url:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
+        "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb/1.0.0-Deploy-Release-549/Default/stores/chaldal/components/landingPage2/LandingPageCategories/images/categories/kitchen-appliances.png?q=low&webp=1",
     },
     {
       id: 9,
-      title: "Music and Gaming",
+      title: "Cooking",
       subTitle: "",
       image_Url:
-        "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
+        "https://chaldn.com/_mpimage/cooking?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D118865&q=best&v=1&m=400&webp=1",
     },
     {
       id: 10,
       title: "Others",
       subTitle: "",
       image_Url:
-        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+        "https://chaldn.com/_mpimage/frozen-canned?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D31483&q=best&v=1&m=400&webp=1",
     },
   ];
   
@@ -613,16 +613,16 @@ export const navItems = [
   
   export const footercompanyLinks = [
     {
-      name: "Game & Video",
+      name: "Cooking & Kitchen",
     },
     {
-      name: "Phone &Tablets",
+      name: "Meat & Fish",
     },
     {
-      name: "Computers & Laptop",
+      name: "Fruits & Vegetable",
     },
     {
-      name: "Sport Watches",
+      name: "Cooking Video",
     },
     {
       name: "Events",
