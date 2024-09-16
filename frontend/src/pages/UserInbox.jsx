@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Layout/Header";
 import { useSelector } from "react-redux";
-import {io} from "socket.io-client";
+import socketIO from "socket.io-client";
 import { format } from "timeago.js";
 import { server } from "../server";
 import axios from "axios";
@@ -10,8 +10,7 @@ import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
 import styles from "../styles/styles";
 const ENDPOINT = "http://localhost:4000/";
-const socketId = io(ENDPOINT, { transports: ["websocket"] });
-
+const socketId = socketIO(ENDPOINT);
 const UserInbox = () => {
   const { user,loading } = useSelector((state) => state.user);
   const [conversations, setConversations] = useState([]);
