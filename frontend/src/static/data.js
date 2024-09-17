@@ -233,7 +233,7 @@ export const navItems = [
     },
     {
       id: 7,
-      title: "Diary & Eggs",
+      title: "Diary and Eggs",
       subTitle: "",
       image_Url: "https://chaldn.com/_mpimage/dairy-eggs?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D31484&q=best&v=1&m=400&webp=1",
     },

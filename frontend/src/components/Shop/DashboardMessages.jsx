@@ -11,7 +11,6 @@ import socketIO from "socket.io-client";
 import { format } from "timeago.js";
 const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT);
-console.log("socketId",socketId)
 const DashboardMessages = () => {
   const { seller,isLoading } = useSelector((state) => state.seller);
   const [conversations, setConversations] = useState([]);
@@ -274,18 +273,24 @@ const MessageList = ({
 
   useEffect(() => {
     const userId = data.members.find((user) => user != me);
-
+  console.log("userId",userId)
     const getUser = async () => {
       try {
         const res = await axios.get(`${server}/user/user-info/${userId}`);
+        console.log("res.data",res.data)
         setUser(res.data.user);
       } catch (error) {
         console.log(error);
       }
     };
+    console.log("me",me)
     getUser();
   }, [me, data]);
-
+  console.log("data",data)
+  console.log("me1",me)
+  if(user.length===0){
+    return null
+  }
   return (
     <div
       className={`w-full flex p-3 px-3 ${
