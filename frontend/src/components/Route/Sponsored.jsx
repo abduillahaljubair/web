@@ -33,16 +33,16 @@ const Sponsored = () => {
         </div>
         <div className="flex items-start">
           <img
-            src="https://th.bing.com/th/id/R.f3430e9a0b77a4228f588c2b1fb3c784?rik=8IbqEKuNzDYjsQ&pid=ImgRaw&r=0"
+            src=""
             style={{ width: "150px", objectFit: "contain" }}
-            alt="Daraz Logo"
+            alt=""
           />
         </div>
         <div className="flex items-start">
           <img
-            src="https://th.bing.com/th/id/OIP.sGZdr6_doiLguRZFjpXjlQHaEL?rs=1&pid=ImgDetMain"
+            src=""
             style={{ width: "150px", objectFit: "contain" }}
-            alt="Custom Sponsor"
+            alt=""
           />
         </div>
       </div>

@@ -50,12 +50,20 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
 
    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
   console.log(activationUrl)
+  const response =await sendMail({
+     
+    email: email,
+    subject: "User Signup",
+    message: activationUrl
+  })
+  console.log("response",response)
     res.status(200).json({
       success: true,
       message: "User created successfully",
      
     });
   } catch (error) {
+    console.log("error",error)
     res.status(error.statusCode?? 500).json({
       success: false,
       message: error.message ?? 'Something went wrong'
