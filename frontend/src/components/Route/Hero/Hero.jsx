@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 
 const Hero = () => {
+  const { loading, isAuthenticated,user } = useSelector((state) => state.user);
   return (
     <div
       className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat ${styles.noramlFlex}`}
@@ -13,7 +15,7 @@ const Hero = () => {
     >
       <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
         <h1
-          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#cdba5e] font-[600] capitalize`}
+          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#ffffff] font-[600] capitalize`}
         >
           Best Collection for <br /> Cooking
         </h1>
@@ -24,13 +26,13 @@ const Hero = () => {
          Enhance your culinary skills with essential utensils such as high-quality knives and versatile spatulas
            and explore new recipes with our exclusive cookbook selection curated by world-class chefs
         </p>
-        <Link to="/products" className="inline-block">
+       {!isAuthenticated&& <Link to="/login" className="inline-block">
             <div className={`${styles.button} mt-5`}>
                  <span className="text-[#fff] font-[Poppins] text-[18px]">
-                    Shop Now
+                    Login Now
                  </span>
             </div>
-        </Link>
+        </Link>}
       </div>
     </div>
   );

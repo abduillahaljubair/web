@@ -2,18 +2,20 @@ import axios from "axios";
 import { server } from "../../server";
 
 // create event
-export const createevent = (data) => async (dispatch) => {
+export const createevent = (payload) => async (dispatch) => {
   try {
     dispatch({
       type: "eventCreateRequest",
     });
 
-    const { d } = await axios.post(`${server}/event/create-event`, data);
+    const { data } = await axios.post(`${server}/event/create-event`, payload);
+    console.log("data", data);
     dispatch({
       type: "eventCreateSuccess",
-      payload: d.event,
+      payload: data.event,
     });
   } catch (error) {
+    console.log("error", error);
     dispatch({
       type: "eventCreateFail",
       payload: error.response.data.message,

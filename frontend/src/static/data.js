@@ -242,7 +242,7 @@ export const navItems = [
       title: "Kitchen Appliances",
       subTitle: "",
       image_Url:
-        "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb/1.0.0-Deploy-Release-549/Default/stores/chaldal/components/landingPage2/LandingPageCategories/images/categories/kitchen-appliances.png?q=low&webp=1",
+        "https://premiergold1.com/wp-content/uploads/2023/12/power_grinder_blende.png",
     },
     {
       id: 9,
