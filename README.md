@@ -1,1 +1,1 @@
-@copyright by becodemy 2023
+This is the daily mart app
